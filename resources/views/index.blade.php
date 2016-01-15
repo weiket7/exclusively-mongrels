@@ -306,7 +306,7 @@
       @foreach($adopts as $adopt)
       <div class="row-item col-md-3 col-sm-6">
         <div class="individual-pet">
-          <img src="{!!URL::to('assets')!!}/images/animal-thumbs/cat-11.jpg" alt="Cat" class="img-responsive">
+          <img src="{!!URL::to('assets')!!}/images/adopt/{{$adopt->image}}" alt="Cat" class="img-responsive">
 
           <article>
             <h4 class="title-text text-capitalize">{{$adopt->adopt_name}}</h4>
