@@ -22,7 +22,7 @@ class Config extends Model
 
   }
 
-  public function getConfigAll()
+  public function getConfigAllSimple()
   {
     $data = DB::table('config')->get();
     $res = [];
@@ -31,4 +31,11 @@ class Config extends Model
     }
     return $res;
   }
+
+  public function getConfigAll()
+  {
+    return DB::table('config')->get();
+  }
+
+
 }

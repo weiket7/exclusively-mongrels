@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('/', 'SiteController@index');
+Route::get('admin', 'AdminController@index');
+Route::get('admin/adopt', 'AdminController@adopt');
 
 
 /*

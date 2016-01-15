@@ -168,7 +168,7 @@
 <div class="about full-width" id="about">
   <div class="fwd-row base-content">
     <div class="col_2_4">
-      <img src="{{URL::to('assets')}}/images/{{$configs['mission']}}" alt="Dog 1" class="img-responsive">
+      <img src="{{URL::to('assets')}}/images/{{$configs['mission_image']}}" alt="Dog 1" class="img-responsive">
     </div>
 
     <div class="col_2_4">
@@ -176,7 +176,7 @@
         <i class="icon-inside icon-plane-airport"></i>
         <h4 class="title-text">Our Mission</h4>
         <hr class="white-line">
-        <p>Every year hundreds of animals such as dogs, cats are become homeless for many reasons. Our mission is to find out the homless animals around the country and make a better life for them. As like human they need love, care and also need home. We founded our organisation to give them a better life and better home. Our successes are going forward and throughtout the year we give a better life around hundreds of homless animals.</p>
+        <p>{{$configs['mission_text']}}</p>
       </article>
     </div>
   </div>
@@ -184,7 +184,7 @@
   <div class="fwd-row sub-content">
     <div class="yellow-bg col_2_4">
       <div class="col_2_4">
-        <img src="{{URL::to('assets')}}/images/{{$configs['vision']}}" alt="Cat 1" class="img-responsive">
+        <img src="{{URL::to('assets')}}/images/{{$configs['vision_image']}}" alt="Cat 1" class="img-responsive">
       </div>
 
       <div class="col_2_4">
@@ -192,14 +192,14 @@
           <i class="icon-inside icon-rocket"></i>
           <h4 class="title-text">Our Vision</h4>
           <hr class="white-line">
-          <p>We want to ensure that after 10 years there are no homeless animals on the street. Every single animal find their sweet home.</p>
+          <p>{{$configs['vision_text']}}</p>
         </article>
       </div>
     </div>
 
     <div class="gray-bg col_2_4">
       <div class="col_2_4">
-        <img src="{{URL::to('assets')}}/images/{{$configs['success']}}" alt="Dog 1" class="img-responsive">
+        <img src="{{URL::to('assets')}}/images/{{$configs['success_image']}}" alt="Dog 1" class="img-responsive">
       </div>
 
       <div class="col_2_4">
@@ -207,7 +207,7 @@
           <i class="icon-inside icon-prize-award"></i>
           <h4 class="title-text">Recent Success</h4>
           <hr class="yellow-line">
-          <p>In five years we find more than 5000 cats and dogs around the USA. 3000 already find thier sweet home and more are knocking the door. </p>
+          <p>{{$configs['success_text']}}</p>
         </article>
       </div>
     </div>
@@ -222,7 +222,7 @@
 <section class="contribution" id="contribution">
   <div class="container">
     <header class="section-header">
-      <h2 class="title-text">Make a Contribution</h2>
+      <h2 class="title-text">Contribute</h2>
       <p class="sub-title">Your small contribution make a huge difference and encourage us to continue our works of success.</p>
     </header>
 
@@ -230,7 +230,7 @@
       <!-- HOW YOUR CAN CONTRIBUTE -->
       <div class="row-item col-md-4 col-sm-8 col-md-offset-0 col-sm-offset-2 wow fadeInUp" data-wow-delay="0s">
         <div class="hover-img">
-          <img src="{!!URL::to('assets')!!}/images/animal-thumbs/cat-2.jpg" alt="Cat" class="img-responsive">
+          <img src="{!!URL::to('assets')!!}/images/{{$configs['adopt_image']}}" alt="Cat" class="img-responsive">
 
           <div class="hover-content">
             <a href="blog-single.html" class="link-popup">
@@ -242,7 +242,7 @@
         <article>
           <h4 class="title-text"><a href="blog-single.html">Adopt</a></h4>
           <hr class="yellow-line">
-          <p>We have almost 1000 homes polite and cute cats and dogs into our care. You can adopt as many as your demand.</p>
+          <p>{{$configs['adopt_text']}}</p>
 
           <a href="blog-single.html" class="btn btn-base">Learn More</a>
         </article>
@@ -251,7 +251,7 @@
       <!-- HOW YOUR CAN CONTRIBUTE -->
       <div class="row-item col-md-4 col-sm-8 col-md-offset-0 col-sm-offset-2 wow fadeInUp" data-wow-delay="0.3s">
         <div class="hover-img">
-          <img src="{!!URL::to('assets')!!}/images/animal-thumbs/cat-3.jpg" alt="Cat" class="img-responsive">
+          <img src="{!!URL::to('assets')!!}/images/{{$configs['foster_image']}}" alt="Cat" class="img-responsive">
 
           <div class="hover-content">
             <a href="blog-single.html" class="link-popup">
@@ -263,7 +263,7 @@
         <article>
           <h4 class="title-text"><a href="blog-single.html">Foster</a></h4>
           <hr class="yellow-line">
-          <p>Love, care and better home are essential need for every animals. You can take that chance to love our animals as human do.</p>
+          <p>{{$configs['foster_text']}}</p>
 
           <a href="blog-single.html" class="btn btn-base">Learn More</a>
         </article>
@@ -272,7 +272,7 @@
       <!-- HOW YOUR CAN CONTRIBUTE -->
       <div class="row-item col-md-4 col-sm-8 col-md-offset-0 col-sm-offset-2 wow fadeInUp" data-wow-delay="0.6s">
         <div class="hover-img">
-          <img src="{!!URL::to('assets')!!}/images/animal-thumbs/dog-2.jpg" alt="Dog" class="img-responsive">
+          <img src="{!!URL::to('assets')!!}/images/{{$configs['donate_image']}}" alt="Dog" class="img-responsive">
 
           <div class="hover-content">
             <a href="blog-single.html" class="link-popup">
@@ -284,7 +284,7 @@
         <article>
           <h4 class="title-text"><a href="blog-single.html">Donate</a></h4>
           <hr class="yellow-line">
-          <p>We have around 100 volunteers in our club. You can join we with us and help the homless animals to find their home.</p>
+          <p>{{$configs['donate_text']}}</p>
 
           <a href="blog-single.html" class="btn btn-base">Learn More</a>
         </article>
@@ -295,13 +295,10 @@
 
 
 
-<!-- =========================
-     PET PROFILE
-============================== -->
 <section class="pet-profile" id="pet-profile">
   <div class="container">
     <header class="section-header">
-      <h2 class="title-text">Pets Profile</h2>
+      <h2 class="title-text">Adopt</h2>
       <p class="sub-title">We have a collection lost cute, handsome and polite cats and dogs that make you adorable and affectionate.</p>
     </header>
 
@@ -576,26 +573,26 @@
         <div class="row">
           <div class="row-item col-sm-6">
             <div class="form-group">
-              <label class="sr-only" for="name">Full Name</label>
+              <label class="sr-only" for="name">Name</label>
               <div class="input-group">
                 <div class="input-group-addon"><i class="icon-user"></i></div>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Your full name" required="required">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Name" required="required">
               </div>
             </div>
 
             <div class="form-group">
-              <label class="sr-only" for="email">Email Address</label>
+              <label class="sr-only" for="email">Email</label>
               <div class="input-group">
                 <div class="input-group-addon"><i class="icon-email-envelope"></i></div>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Your email address" required="required">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="required">
               </div>
             </div>
 
             <div class="form-group">
-              <label class="sr-only" for="phone">Phone Number</label>
+              <label class="sr-only" for="phone">Contact Number</label>
               <div class="input-group">
                 <div class="input-group-addon"><i class="icon-call-phone"></i></div>
-                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone number (optional)">
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Contact Number">
               </div>
             </div>
           </div>
@@ -605,18 +602,18 @@
               <label class="sr-only" for="message">Message</label>
               <div class="input-group">
                 <div class="input-group-addon"><i class="icon-email-envelope"></i></div>
-                <textarea class="form-control" id="message" name="message" placeholder="Write your message" rows="4" required="required"></textarea>
+                <textarea class="form-control" id="message" name="message" placeholder="Message" rows="4" required="required"></textarea>
               </div>
             </div>
 
             <div>
-              <label class="sr-only">Send Email</label>
-              <button class="btn btn-iconic btn-fill"><i class="icon-paper-plane"></i> <span class="btn-md">Send Message</span></button>
+              <label class="sr-only">Send</label>
+              <button class="btn btn-iconic btn-fill"><i class="icon-paper-plane"></i> <span class="btn-md">Send</span></button>
             </div>
           </div>
 
           <div class="col-sm-12">
-            <p class="success-msg">Your Message has been Successfully Sent!</p>
+            <p class="success-msg">Your message has been Successfully Sent!</p>
             <p class="error-msg">Error! Something went wrong!</p>
           </div>
         </div>

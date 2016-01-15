@@ -30,6 +30,10 @@ class Adopt extends Model
     return $data;
   }
 
+  public function getAdoptAll() {
+    return DB::table('adopt')->where('adopt_stat', 'A')->get();
+  }
+
   public function calcAge($birthday) {
     $date = new DateTime($birthday);
     $diff = $date->diff(new DateTime());
