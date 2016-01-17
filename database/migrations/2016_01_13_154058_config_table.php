@@ -17,6 +17,7 @@ class ConfigTable extends Migration
         $table->string('config_type', 10);
         $table->string('config_key', 15);
         $table->string('config_value', 1000);
+        $table->string('config_desc', 200);
         $table->timestamps();
       });
     }

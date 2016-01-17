@@ -7,15 +7,17 @@ class ConfigSeeder extends Seeder
     public function run()
     {
       $configs[] = [
-      'config_type'=>'image',
-      'config_key'=>'banner1',
-      'config_value'=>'banner1.jpg',
+        'config_type'=>'image',
+        'config_key'=>'banner1',
+        'config_value'=>'banner1.jpg',
+        'config_desc'=>'1920px width x 1214px height'
       ];
 
       $configs[] = [
         'config_type'=>'image',
         'config_key'=>'mission_image',
         'config_value'=>'mission.jpg',
+        'config_desc'=>'800px width x 500px height'
       ];
       $configs[] = [
         'config_type'=>'textarea',
@@ -26,6 +28,7 @@ class ConfigSeeder extends Seeder
         'config_type'=>'image',
         'config_key'=>'vision_image',
         'config_value'=>'vision.jpg',
+        'config_desc'=>'400px width x 350px height'
       ];
       $configs[] = [
         'config_type'=>'textarea',
@@ -36,6 +39,7 @@ class ConfigSeeder extends Seeder
         'config_type'=>'image',
         'config_key'=>'success_image',
         'config_value'=>'success.jpg',
+        'config_desc'=>'400px width x 350px height'
       ];$configs[] = [
       'config_type'=>'textarea',
       'config_key'=>'success_text',
@@ -46,6 +50,7 @@ class ConfigSeeder extends Seeder
         'config_type'=>'image',
         'config_key'=>'adopt_image',
         'config_value'=>'adopt.jpg',
+        'config_desc'=>'360px width x 360px height'
       ];
       $configs[] = [
         'config_type'=>'textarea',
@@ -56,6 +61,7 @@ class ConfigSeeder extends Seeder
         'config_type'=>'image',
         'config_key'=>'foster_image',
         'config_value'=>'foster.jpg',
+        'config_desc'=>'360px width x 360px height'
       ];
       $configs[] = [
         'config_type'=>'textarea',
@@ -66,6 +72,7 @@ class ConfigSeeder extends Seeder
         'config_type'=>'image',
         'config_key'=>'donate_image',
         'config_value'=>'donate.jpg',
+        'config_desc'=>'360px width x 360px height'
       ];
       $configs[] = [
         'config_type'=>'textarea',
@@ -75,12 +82,12 @@ class ConfigSeeder extends Seeder
       $configs[] = [
         'config_type'=>'text',
         'config_key'=>'rescued_initial',
-        'config_value'=>'20',
+        'config_value'=>'65',
       ];
       $configs[] = [
         'config_type'=>'text',
         'config_key'=>'adopted_initial',
-        'config_value'=>'10',
+        'config_value'=>'57',
       ];
 
       foreach($configs as $config) {

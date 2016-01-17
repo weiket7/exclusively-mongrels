@@ -19,6 +19,8 @@ Route::get('/', 'SiteController@index');
 Route::get('admin', 'AdminController@index');
 Route::get('admin/adopt', 'AdminController@adopt');
 Route::post('contact', 'SiteController@contact');
+Route::get('coming-soon', 'SiteController@comingSoon');
+Route::get('admin/request-adoptadog', 'AdminController@requestAdoptadog');
 
 
 /*

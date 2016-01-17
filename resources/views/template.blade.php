@@ -18,40 +18,47 @@
   <!-- =========================
     FAV AND TOUCH ICONS
   ============================== -->
-  <link rel="icon" href="images/favicon.ico">
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  <link rel="icon" href="{!!URL::to('assets')!!}/images/favicon.ico">
+  <link rel="apple-touch-icon" href="{!!URL::to('assets')!!}/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="{!!URL::to('assets')!!}/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="{!!URL::to('assets')!!}/images/apple-touch-icon-114x114.png">
 
   <!-- =========================
      STYLESHEETS
   ============================== -->
+  <!-- PRELOADER -->
+  <link rel="stylesheet" href="{!!URL::to('assets')!!}/css/preloader.css">
+
   <!-- BOOTSTRAP CSS -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="{!!URL::to('assets')!!}/css/bootstrap.min.css">
 
   <!-- GOOGLE FONTS -->
   <link href='http://fonts.googleapis.com/css?family=Oswald:300,400,700%7CRaleway:100,200,300,400,500,600,700' rel='stylesheet'>
 
   <!-- FONT ICONS CSS -->
-  <link rel="stylesheet" href="icons/styles.css">
+  <link rel="stylesheet" href="{!!URL::to('assets')!!}/icons/styles.css">
 
   <!-- OWL CAROUSEL CSS -->
-  <link rel="stylesheet" href="css/owl.carousel.css">
-  <link rel="stylesheet" href="css/owl.theme.yellow.css">
+  <link rel="stylesheet" href="{!!URL::to('assets')!!}/css/owl.carousel.css">
+  <link rel="stylesheet" href="{!!URL::to('assets')!!}/css/owl.theme.yellow.css">
 
   <!-- NIVO LIGHTBOX -->
-  <link rel="stylesheet" href="css/nivo-lightbox/nivo-lightbox.css">
-  <link rel="stylesheet" href="css/nivo-lightbox/default.css">
+  <link rel="stylesheet" href="{!!URL::to('assets')!!}/css/nivo-lightbox/nivo-lightbox.css">
+  <link rel="stylesheet" href="{!!URL::to('assets')!!}/css/nivo-lightbox/default.css">
 
   <!-- CUSTOM CSS -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="{!!URL::to('assets')!!}/css/style.css">
+
+  <!-- ANIMATE CSS -->
+  <link rel="stylesheet" href="{!!URL::to('assets')!!}/css/animate.css">
 
   <!-- RESPONSIVE FIXES -->
-  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="{!!URL::to('assets')!!}/css/responsive.css">
+  <link rel="stylesheet" href="{!!URL::to('assets')!!}/css/custom.css">
 
   <!--[if lt IE 9]>
-  <script src="js/html5shiv.js"></script>
-  <script src="js/respond.min.js"></script>
+  <script src="{!!URL::to('assets')!!}/js/html5shiv.js"></script>
+  <script src="{!!URL::to('assets')!!}/js/respond.min.js"></script>
   <![endif]-->
 
 </head>
@@ -61,7 +68,7 @@
 ============================== -->
 <div class="home" id="home">
   <!-- NAVBAR -->
-  <nav class="navbar" role="navigation">
+  <nav class="navbar @if(Request::url() == URL::to('/')) navbar-home navbar-fixed-top @endif" role="navigation">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#anima-navbar-collapse">
@@ -72,172 +79,100 @@
         </button>
 
         <!-- TEMPLATE LOGO -->
-        <a class="navbar-brand" href="#">Anima</a>
+        <a class="navbar-brand" href="{{URL::to('/')}}">Exclusively Mongrels</a>
       </div>
 
       <div class="collapse navbar-collapse" id="anima-navbar-collapse">
         <ul class="navbar-contact hidden-xs">
-          <li class="mob"><a href="">+880 1723 130 531</a></li>
-          <li class="email"><a href="">support@yourdomain.com</a></li>
+          {{--<li class="mob"><a href="">+11 (45) 322 199 33</a></li>--}}
+          <li class="email"><a href="">xmon2012@gmail.com</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#contribution">Contribute</a>
-            <ul>
-              <li><a href="#">Level 1</a></li>
-              <li><a href="#">Level 1 link 2</a>
-
-                <ul>
-                  <li><a href="#">Level 2</a></li>
-                  <li><a href="#">Level 2 link 2</a></li>
-                  <li><a href="#">Level 2</a></li>
-                </ul>
-
-              </li>
-              <li><a href="#">Level 1</a></li>
-            </ul>
-          </li>
-          <li><a href="index.html#pet-profile">pet Profile</a></li>
-          <li><a href="index.html#recent-events">Events</a></li>
-          <li><a href="index.html#pets-gallery">Gallery</a></li>
-          <li><a href="index.html#news">News</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-          <li><a href="shortcode.html">Shortcode</a></li>
-          <li><a href="#" class="nav-donate">Donate Now</a></li>
+          <li class="active"><a href="#home">Home <span class="sr-only">(current)</span></a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contribution">Contribute</a></li>
+          <li><a href="#pet-profile">Adopt</a></li>
+          <li><a href="#recent-events">Events</a></li>
+          <!--<li><a href="#news">News</a></li>-->
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
-</div>
 
+  @if(Request::url() == URL::to('/'))
+    <div class="owl-carousel">
+      <div class="item slider">
+        <img src="{!!URL::to('assets')!!}/images/{{$configs['banner1']}}" alt="Cat">
 
-
-<!-- =========================
-     PAGE HEADER
-============================== -->
-<div class="page-head">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-7">
-        <header class="section-header">
-          <h1 class="title-text">Blog Page</h1>
-        </header>
-        <p><a href="index.html">Return to Home page</a></p>
+        <div class="slider-content">
+          <div class="container">
+            <h1 class="title-text">Be the difference. Adopt.</h1>
+            <!--<ul>
+              <li>Adopt</li>
+              <li>Care</li>
+              <li>Love</li>
+            </ul>
+            <a href="#" class="btn btn-base btn-xlg">Donate Now</a>-->
+          </div>
+        </div><!-- /.slider-content -->
       </div>
 
-      <div class="col-md-5">
-        <ul class="bredcrumbs">
-          <li><a href="#">Home</a></li>
-          <li>Blog</li>
-        </ul>
+      <div class="item slider">
+        <img src="{!!URL::to('assets')!!}/images/carousel/dog-1.jpg" alt="Dog">
+
+        <div class="slider-content">
+          <div class="container">
+            <h1 class="title-text">Be the difference. Adopt.</h1>
+            <!--<ul>
+              <li>Adopt</li>
+              <li>Care</li>
+              <li>Love</li>
+            </ul>
+            <a href="#" class="btn btn-base btn-xlg">Donate Now</a>-->
+          </div>
+        </div><!-- /.slider-content -->
       </div>
     </div>
-  </div>
+  @endif
 </div>
 
 
 @yield('content')
 
+
+
+
 <!-- =========================
      FOOTER
 ============================== -->
 <footer class="footer">
-  <div class="footer-head">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6">
-          <h2 class="title-text">Anima</h2>
-        </div>
-        <div class="text-right col-sm-6">
-          <ul class="social-links text-center">
-            <li><a href="#"><i class="icon-facebook"></i><span>Facebook</span></a></li>
-            <li><a href="#"><i class="icon-google-plus"></i><span>Google+</span></a></li>
-            <li><a href="#"><i class="icon-twitter"></i><span>Twitter</span></a></li>
-            <li><a href="#"><i class="icon-linkedin"></i><span>Linkedin</span></a></li>
-            <li><a href="#"><i class="icon-instagram"></i><span>Instagram</span></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div><!-- /.footer-head -->
-
-  <section class="footer-body">
-    <div class="container">
-      <div class="row">
-        <div class="row-item col-md-4">
-          <h4 class="title-text">about us</h4>
-          <p>As a nono-profit organistion we do lots of social activistis, you can find those in the following links.</p>
-
-          <div class="row">
-            <div class="col-md-6">
-              <ul class="footer-link">
-                <li><a href="#">Mission and Vision</a></li>
-                <li><a href="#">Mission and Vision</a></li>
-                <li><a href="#">Mission and Vision</a></li>
-              </ul>
-            </div>
-            <div class="col-md-6">
-              <ul class="footer-link">
-                <li><a href="#">Mission and Vision</a></li>
-                <li><a href="#">Mission and Vision</a></li>
-                <li><a href="#">Mission and Vision</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="row-item col-md-4">
-          <h4 class="title-text">Subscribe</h4>
-          <p>To stay touch we touch and our works please subscribe our newsletter by entering your email address.</p>
-
-          <form id="subscribe" role="form" class="subscribe">
-            <div class="input-group">
-              <label for="subscribe-email" class="sr-only">Your email address</label>
-              <input type="email" name="subscribe-email" id="subscribe-email" class="form-control" placeholder="Your email address">
-              <button class="btn submit-btn">subscribe</button>
-            </div>
-
-            <p class="success-msg">You are successfully subscribed!</p>
-            <p class="error-msg">Error! Something went wrong!</p>
-          </form>
-
-        </div>
-
-        <div class="row-item col-md-4">
-          <h4 class="title-text">flickr photos</h4>
-
-          <ul class="flickr-feed"></ul>
-        </div>
-      </div>
-    </div>
-  </section><!-- /.footer-body -->
-
   <div class="footer-foot">
     <div class="container">
-      <p>&copy; 2015 <a href="http://codepassenger.com/">CodePassanger</a> - Nonprofit Template By CodePassenger</p>
+      <p>&copy; 2015 Developed by wei_ket@hotmail.com from <a href="www.adoptadog.sg">www.adoptadog.sg</a></p>
     </div>
   </div>
   <!-- /.footer-foot -->
 </footer>
 
 
-<script src="js/jquery-1.11.2.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.nav.js"></script>
-<script src="js/jquery.scrollTo.min.js"></script>
-<script src="js/jquery.localScroll.min.js"></script>
-<script src="js/jquery.countdown.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.waypoints.min.js"></script>
-<script src="js/jquery.counterup.min.js"></script>
-<script src="js/nivo-lightbox.min.js"></script>
-<script src="js/jquery.mixitup.min.js"></script>
-<script src="js/jflickrfeed.min.js"></script>
-<script src="js/matchMedia.js"></script>
-<script src="js/jquery.ajaxchimp.min.js"></script>
-<script src="js/jquery.fitvids.js"></script>
-<script src="js/jquery.stellar.min.js"></script>
-<script src="js/smoothscroll.js"></script>
-<script src="js/custom.js"></script>
+<script src="{!!URL::to('assets')!!}/js/jquery-1.11.2.min.js"></script>
+<script src="{!!URL::to('assets')!!}/js/bootstrap.min.js"></script>
+<script src="{!!URL::to('assets')!!}/js/jquery.nav.js"></script>
+<script src="{!!URL::to('assets')!!}/js/jquery.scrollTo.min.js"></script>
+<script src="{!!URL::to('assets')!!}/js/jquery.localScroll.min.js"></script>
+<script src="{!!URL::to('assets')!!}/js/jquery.countdown.min.js"></script>
+<script src="{!!URL::to('assets')!!}/js/owl.carousel.min.js"></script>
+<script src="{!!URL::to('assets')!!}/js/jquery.waypoints.min.js"></script>
+<script src="{!!URL::to('assets')!!}/js/jquery.counterup.min.js"></script>
+<script src="{!!URL::to('assets')!!}/js/nivo-lightbox.min.js"></script>
+<script src="{!!URL::to('assets')!!}/js/jquery.mixitup.min.js"></script>
+<script src="{!!URL::to('assets')!!}/js/jflickrfeed.min.js"></script>
+<script src="{!!URL::to('assets')!!}/js/matchMedia.js"></script>
+<script src="{!!URL::to('assets')!!}/js/jquery.ajaxchimp.min.js"></script>
+<script src="{!!URL::to('assets')!!}/js/jquery.fitvids.js"></script>
+<script src="{!!URL::to('assets')!!}/js/jquery.stellar.min.js"></script>
+<script src="{!!URL::to('assets')!!}/js/smoothscroll.js"></script>
+<script src="{!!URL::to('assets')!!}/js/wow.min.js"></script>
+<script src="{!!URL::to('assets')!!}/js/custom.js"></script>

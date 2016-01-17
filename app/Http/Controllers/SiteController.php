@@ -33,6 +33,9 @@ class SiteController extends Controller
         $message->from($data['email'], $data['name'])->to('adoptadogsg7@gmail.com')->subject(substr($data["content"],0,50));
       });
     }
+  }
 
+  public function comingSoon() {
+    return view('coming-soon');
   }
 }
