@@ -239,14 +239,14 @@ $("#contact-form").on('submit', function(e) {
     var data = {
         name: $("#name").val(),
         email: $("#email").val(),
-        phone: $("#phone").val(),
-        message: $("#message").val()
+        mobile: $("#mobile").val(),
+        content: $("#content").val()
     };
 
-    if ( isValidEmail(data['email']) && (data['message'].length > 1) && (data['name'].length > 1) ) {
+    if ( isValidEmail(data['email']) && (data['content'].length > 1) && (data['name'].length > 1) ) {
         $.ajax({
             type: "POST",
-            url: "sendmail.php",
+            url: "contact",
             data: data,
             success: function() {
                 $('.contact-form .success-msg').delay(500).fadeIn(1000);

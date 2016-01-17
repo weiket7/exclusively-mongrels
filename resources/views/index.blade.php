@@ -227,16 +227,15 @@
     </header>
 
     <div class="row">
-      <!-- HOW YOUR CAN CONTRIBUTE -->
       <div class="row-item col-md-4 col-sm-8 col-md-offset-0 col-sm-offset-2 wow fadeInUp" data-wow-delay="0s">
         <div class="hover-img">
           <img src="{!!URL::to('assets')!!}/images/{{$configs['adopt_image']}}" alt="Cat" class="img-responsive">
 
-          <div class="hover-content">
+          <!--<div class="hover-content">
             <a href="blog-single.html" class="link-popup">
               <i class="icon-inside icon-link"></i>
             </a>
-          </div>
+          </div>-->
         </div>
 
         <article>
@@ -252,12 +251,6 @@
       <div class="row-item col-md-4 col-sm-8 col-md-offset-0 col-sm-offset-2 wow fadeInUp" data-wow-delay="0.3s">
         <div class="hover-img">
           <img src="{!!URL::to('assets')!!}/images/{{$configs['foster_image']}}" alt="Cat" class="img-responsive">
-
-          <div class="hover-content">
-            <a href="blog-single.html" class="link-popup">
-              <i class="icon-inside icon-link"></i>
-            </a>
-          </div>
         </div>
 
         <article>
@@ -273,12 +266,6 @@
       <div class="row-item col-md-4 col-sm-8 col-md-offset-0 col-sm-offset-2 wow fadeInUp" data-wow-delay="0.6s">
         <div class="hover-img">
           <img src="{!!URL::to('assets')!!}/images/{{$configs['donate_image']}}" alt="Dog" class="img-responsive">
-
-          <div class="hover-content">
-            <a href="blog-single.html" class="link-popup">
-              <i class="icon-inside icon-link"></i>
-            </a>
-          </div>
         </div>
 
         <article>
@@ -311,7 +298,7 @@
           <article>
             <h4 class="title-text text-capitalize">{{$adopt->adopt_name}}</h4>
             <hr class="yellow-line">
-            <p>Turkey is very gentle and modest cats we ever find. After adopting this gentle cat you will be very happy.</p>
+            <p>{{$adopt->desc_short}}</p>
           </article>
 
           <div class="profile">
@@ -589,10 +576,10 @@
             </div>
 
             <div class="form-group">
-              <label class="sr-only" for="phone">Contact Number</label>
+              <label class="sr-only" for="contact">Mobile</label>
               <div class="input-group">
                 <div class="input-group-addon"><i class="icon-call-phone"></i></div>
-                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Contact Number">
+                <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="Contact Number" required="required">
               </div>
             </div>
           </div>
@@ -602,19 +589,19 @@
               <label class="sr-only" for="message">Message</label>
               <div class="input-group">
                 <div class="input-group-addon"><i class="icon-email-envelope"></i></div>
-                <textarea class="form-control" id="message" name="message" placeholder="Message" rows="4" required="required"></textarea>
+                <textarea class="form-control" id="content" name="content" placeholder="Message" rows="4" required="required"></textarea>
               </div>
             </div>
 
             <div>
               <label class="sr-only">Send</label>
-              <button class="btn btn-iconic btn-fill"><i class="icon-paper-plane"></i> <span class="btn-md">Send</span></button>
+              <button type="submit" class="btn btn-iconic btn-fill"><i class="icon-paper-plane"></i> <span class="btn-md">Send</span></button>
             </div>
           </div>
 
           <div class="col-sm-12">
-            <p class="success-msg">Your message has been Successfully Sent!</p>
-            <p class="error-msg">Error! Something went wrong!</p>
+            <p class="alert-success success-msg">Your message has been Successfully Sent!</p>
+            <p class="alert-success error-msg">An error occurred. Please directly email xmon2012@gmail.com.</p>
           </div>
         </div>
       </form>
