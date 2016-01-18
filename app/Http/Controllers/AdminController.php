@@ -24,8 +24,12 @@ class AdminController extends Controller
   public function requestAdoptadog() {
     $client = new Client();
     $res = $client->request('GET', 'http://www.adoptadog.sg/adopt/api-feed/exclusivelymongrels');
-    $json = $res->getBody();
-    $arr = json_decode($json);
-    var_dump($arr);
+    $adopts_json = $res->getBody();
+    $adopts_arr= json_decode($adopts_json);
+    var_dump($adopts_arr);
+
+    $adopt_service = new Adopt();
+    $adopt_service->requestAdoptadog($adopts_arr);
+
   }
 }

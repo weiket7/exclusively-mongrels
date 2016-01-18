@@ -35,7 +35,7 @@
   <!-- GOOGLE FONTS -->
   <link href='http://fonts.googleapis.com/css?family=Oswald:300,400,700%7CRaleway:100,200,300,400,500,600,700' rel='stylesheet'>
 
-  <!-- FONT ICONS CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="{!!URL::to('assets')!!}/icons/styles.css">
 
   <!-- OWL CAROUSEL CSS -->
@@ -84,7 +84,6 @@
 
       <div class="collapse navbar-collapse" id="anima-navbar-collapse">
         <ul class="navbar-contact hidden-xs">
-          {{--<li class="mob"><a href="">+11 (45) 322 199 33</a></li>--}}
           <li class="email"><a href="">xmon2012@gmail.com</a></li>
         </ul>
 
@@ -93,7 +92,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="#contribution">Contribute</a></li>
           <li><a href="#pet-profile">Adopt</a></li>
-          <li><a href="#recent-events">Events</a></li>
+          <!--<li><a href="#recent-events">Events</a></li>-->
           <!--<li><a href="#news">News</a></li>-->
           <li><a href="#contact">Contact</a></li>
         </ul>

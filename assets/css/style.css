@@ -402,24 +402,17 @@ a .icon-inside:hover {
 .recent-events,
 .team-members,
 .news,
-.contact {
-  padding: 120px 0 75px;
-}
+.partners,
+.contact,
 .pet-profile,
 .testimonials {
-  padding: 120px 0;
+  padding: 80px 0 20px;
 }
+
+.adopt-pets .overlay,
+.success-stories .overlay,
 .pets-gallery {
-  padding-top: 120px;
-}
-.partners {
-  padding: 120px 0 90px;
-}
-.adopt-pets .overlay {
-  padding: 120px 0 75px;
-}
-.success-stories .overlay {
-  padding: 120px 0 90px;
+  padding: 50px 0px;
 }
 .footer-body {
   padding: 80px 0 35px;
@@ -427,7 +420,7 @@ a .icon-inside:hover {
 /*************** SECTION HEADER ***************/
 .section-header {
   display: table;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 .section-header .title-text {
   display: table-cell;

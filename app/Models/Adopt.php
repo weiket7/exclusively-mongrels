@@ -40,15 +40,34 @@ class Adopt extends Model
     $age = '';
     if($diff->y > 0) {
       $age .= $diff->y;
-      if ($diff->y>1) $age.=' yrs ';
-      else $age.=' yr ';
+      if ($diff->y>1) $age.=' years ';
+      else $age.=' year ';
     }
     if ($diff->m > 0) {
       $age.=$diff->m;
-      if ($diff->m>1) $age.=' mths';
-      else $age.=' mth';
+      if ($diff->m>1) $age.=' months';
+      else $age.=' month';
     }
     return $age;
+  }
+
+  public function requestAdoptadog($adopts) {
+    $s = "DELETE from adopt";
+    DB::statement($s);
+
+    foreach($adopts as $adopt) {
+      $data = [
+        'adopt_stat'=>'A',
+        'image'=>'bruno.jpg',
+        'breed'=>'Cross Breed',
+        'adopt_name'=>'Bruno',
+        'gender'=>'M',
+        'hdb'=>'N',
+        'birthday'=>'2015-01-01',
+        'desc_long'=>'Bruno was bailed out from the AVA about a month ago. He was rounded up as part of the stray population controls but was kept at the pound for a month because of his good temperament. Bruno is very quiet but is not suitable for families with young kids or small dogs. He needs a very firm handler who will take charge and teach Bruno how to behave.',
+        'temperament'=>'Gentle',
+      ];
+    }
   }
 
 }

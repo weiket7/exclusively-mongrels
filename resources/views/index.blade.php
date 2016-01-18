@@ -132,24 +132,29 @@
     <div class="row">
       @foreach($adopts as $adopt)
       <div class="row-item col-md-3 col-sm-6">
+        <a href="{{URL::to('coming-soon')}}">
         <div class="individual-pet">
           <img src="{!!URL::to('assets')!!}/images/adopt/{{$adopt->image}}" alt="Cat" class="img-responsive">
 
           <article>
             <h4 class="title-text text-capitalize">{{$adopt->adopt_name}}</h4>
             <hr class="yellow-line">
-            <p>{{$adopt->desc_short}}</p>
+            <p>
+              <i class="fa fa-birthday-cake"></i> {{$adopt->age}}<br>
+              <i class="fa fa-home"></i> @if($adopt->hdb == 'N') Not @endif HDB Approved
+            </p>
           </article>
 
-          <div class="profile">
+          {{--<div class="profile">
             <ul>
               <li>Age: <strong>{{$adopt->age}}</strong></li>
               <li>Temperament: <strong>{{$adopt->temperament}}</strong></li>
             </ul>
 
             <a href="blog-signle.html" class="btn btn-fill">Learn More</a>
-          </div> <!-- /.profile -->
+          </div>--}}
         </div>
+        </a>
       </div>
       @endforeach
     </div>

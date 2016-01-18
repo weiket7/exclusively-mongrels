@@ -30,7 +30,7 @@ class SiteController extends Controller
         'mobile'=>$input['mobile']
       ];
       Mail::send('contact-email', $data, function ($message) use ($data) {
-        $message->from($data['email'], $data['name'])->to('adoptadogsg7@gmail.com')->subject(substr($data["content"],0,50));
+        $message->from($data['email'], $data['name'])->to('xmon2012@gmail.com')->subject(substr($data["content"],0,50));
       });
     }
   }
