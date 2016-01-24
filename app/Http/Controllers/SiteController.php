@@ -7,9 +7,24 @@ use App\Models\Config;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Session;
 
 class SiteController extends Controller
 {
+  public function login() {
+    if (Request::isMethod('post')) {
+      $input = Input::all();
+      if (strtolower($input['username']) == 'em' && strtolower($input['password']) == 'em168') {
+        Session::put('login', 'EM');
+        return redirect('admin');
+      } else {
+        return redirect('login')->with('message', 'You are not authorized');
+      }
+    }
+
+    return view("login");
+  }
+
   public function index() {
 
     $adopt_service = new Adopt();

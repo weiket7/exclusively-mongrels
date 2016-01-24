@@ -6,10 +6,17 @@
     <br>
     <h1>Admin</h1>
 
+    @if (Session::has('message'))
+      <div class="alert alert-success">
+        {{ Session::get('message') }}
+      </div>
+    @endif
+
     <a href="{{URL::to('admin/adopt')}}">Adopt</a>
     <br><br>
 
-    <form method="post" action="">
+    <form method="post" action="" enctype="multipart/form-data">
+      {{csrf_field()}}
       <table class="table table-bordered">
         @foreach($configs as $config)
           <tr>

@@ -4,12 +4,12 @@
   <meta charset="utf-8">
 
   <!-- TITLE OF SITE -->
-  <title>Anima - Responsive Pet Rescue and Shelter Template</title>
+  <title>Exclusively Mongrels</title>
 
   <!-- META DATA -->
-  <meta name="description" content="Anima is a Responsive Bootstrap 3 Pet Rescue and Shelter Template Which is Designed Based on Twitter Bootstrap 3.3.4, HTML5 and CSS3. It is also suitable for Non-Profit or any Charity Organization." />
+  <meta name="description" content="Exclusively Mongrels is a non-profit organisation who appreciate the uniqueness of mongrels and that they are neither inferior nor superior to pedigrees but equally loving and fun to own in their own rights." />
   <meta name="keywords" content="animal rescue, pet rescue, animal shelter, pet shelter, animal rescue and shelter, non-profit, charity, pet rescue theme, animal rescue theme" />
-  <meta name="author" content="CodePassenger">
+  <meta name="author" content="ExclusivelyMongrels">
 
   <!-- Mobile Specific Meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">

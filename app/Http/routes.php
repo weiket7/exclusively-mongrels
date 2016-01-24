@@ -12,28 +12,23 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  return view('welcome');
 });
 
-Route::get('/', 'SiteController@index');
-Route::get('admin', 'AdminController@index');
-Route::get('admin/adopt', 'AdminController@adopt');
-Route::post('contact', 'SiteController@contact');
-Route::get('coming-soon', 'SiteController@comingSoon');
-Route::get('admin/request-adoptadog', 'AdminController@requestAdoptadog');
-
-
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| This route group applies the "web" middleware group to every route
-| it contains. The "web" middleware group is defined in your HTTP
-| kernel and includes session state, CSRF protection, and more.
-|
-*/
-
 Route::group(['middleware' => ['web']], function () {
-    //
+
+  Route::get('/', 'SiteController@index');
+  Route::post('contact', 'SiteController@contact');
+  Route::get('login', 'SiteController@login');
+  Route::get('login2', 'SiteController@login2');
+  Route::post('login', 'SiteController@login');
+  Route::get('coming-soon', 'SiteController@comingSoon');
+
+  Route::group(['middleware' => 'auth'], function () {
+    Route::get('admin', 'AdminController@index');
+    Route::post('admin', 'AdminController@index');
+    Route::get('admin/request-adoptadog', 'AdminController@requestAdoptadog');
+    Route::get('admin/adopt', 'AdminController@adopt');
+  });
+
 });

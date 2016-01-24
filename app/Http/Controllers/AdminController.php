@@ -5,12 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\Adopt;
 use App\Models\Config;
 use GuzzleHttp\Client;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Request;
 
 class AdminController extends Controller
 {
   public function index() {
     $config_service = new Config();
+    if (Request::isMethod('post')) {
+      $input = Input::all();
+      $config_service->updateConfigAll($input);
+      //return redirect()->back()->with('message', 'Updated');
+    }
     $data['configs'] = $config_service->getConfigAll();
     return view("admin.admin", $data);
   }
