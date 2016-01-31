@@ -18,6 +18,7 @@ class SiteController extends Controller
         Session::put('login', 'EM');
         return redirect('admin');
       } else {
+        Session::forget('login', 'EM');
         return redirect('login')->with('message', 'You are not authorized');
       }
     }

@@ -55,11 +55,16 @@
   <!-- RESPONSIVE FIXES -->
   <link rel="stylesheet" href="{!!URL::to('assets')!!}/css/responsive.css">
   <link rel="stylesheet" href="{!!URL::to('assets')!!}/css/custom.css">
+  <link rel="stylesheet" href="{!!URL::to('assets')!!}/css/jquery-ui.css" />
 
   <!--[if lt IE 9]>
   <script src="{!!URL::to('assets')!!}/js/html5shiv.js"></script>
   <script src="{!!URL::to('assets')!!}/js/respond.min.js"></script>
   <![endif]-->
+
+  <script src="{!!URL::to('assets')!!}/js/jquery-1.11.2.min.js"></script>
+  <script src="{!!URL::to('assets')!!}/js/jquery.validate.js" ></script>
+  <script src="{!!URL::to('assets')!!}//js/jquery-ui.min.js" ></script>
 
 </head>
 <body>
@@ -108,18 +113,12 @@
         <div class="slider-content">
           <div class="container">
             <h1 class="title-text">Be the difference. Adopt.</h1>
-            <!--<ul>
-              <li>Adopt</li>
-              <li>Care</li>
-              <li>Love</li>
-            </ul>
-            <a href="#" class="btn btn-base btn-xlg">Donate Now</a>-->
           </div>
         </div><!-- /.slider-content -->
       </div>
 
       <div class="item slider">
-        <img src="{!!URL::to('assets')!!}/images/carousel/dog-1.jpg" alt="Dog">
+        <img src="{!!URL::to('assets')!!}/images/{{$configs['banner2']}}" alt="Cat">
 
         <div class="slider-content">
           <div class="container">
@@ -141,7 +140,7 @@
 @yield('content')
 
 
-
+@yield('sidebar')
 
 <!-- =========================
      FOOTER
@@ -156,22 +155,11 @@
 </footer>
 
 
-<script src="{!!URL::to('assets')!!}/js/jquery-1.11.2.min.js"></script>
 <script src="{!!URL::to('assets')!!}/js/bootstrap.min.js"></script>
 <script src="{!!URL::to('assets')!!}/js/jquery.nav.js"></script>
 <script src="{!!URL::to('assets')!!}/js/jquery.scrollTo.min.js"></script>
 <script src="{!!URL::to('assets')!!}/js/jquery.localScroll.min.js"></script>
-<script src="{!!URL::to('assets')!!}/js/jquery.countdown.min.js"></script>
 <script src="{!!URL::to('assets')!!}/js/owl.carousel.min.js"></script>
-<script src="{!!URL::to('assets')!!}/js/jquery.waypoints.min.js"></script>
-<script src="{!!URL::to('assets')!!}/js/jquery.counterup.min.js"></script>
 <script src="{!!URL::to('assets')!!}/js/nivo-lightbox.min.js"></script>
-<script src="{!!URL::to('assets')!!}/js/jquery.mixitup.min.js"></script>
-<script src="{!!URL::to('assets')!!}/js/jflickrfeed.min.js"></script>
-<script src="{!!URL::to('assets')!!}/js/matchMedia.js"></script>
-<script src="{!!URL::to('assets')!!}/js/jquery.ajaxchimp.min.js"></script>
-<script src="{!!URL::to('assets')!!}/js/jquery.fitvids.js"></script>
-<script src="{!!URL::to('assets')!!}/js/jquery.stellar.min.js"></script>
-<script src="{!!URL::to('assets')!!}/js/smoothscroll.js"></script>
-<script src="{!!URL::to('assets')!!}/js/wow.min.js"></script>
 <script src="{!!URL::to('assets')!!}/js/custom.js"></script>
+

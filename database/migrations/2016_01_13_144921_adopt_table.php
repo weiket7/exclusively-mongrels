@@ -15,12 +15,12 @@ class AdoptTable extends Migration
       Schema::create('adopt', function (Blueprint $table) {
         $table->increments('adopt_id');
         $table->char('adopt_stat', 1);
-        $table->string('adopt_name', 30);
+        $table->string('name', 30);
         $table->string('breed', 20);
         $table->string('image', 30);
         $table->string('desc_long', 2000);
         $table->string('desc_short', 2000);
-        $table->string('temperament', 2000);
+        $table->string('temperament', 15);
         $table->char('gender', 1);
         $table->char('hdb', 1);
         $table->date('birthday');

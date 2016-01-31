@@ -68,46 +68,6 @@ if ( matchMedia( 'only screen and (min-width: 768px)' ).matches ) {
 
 
 /*
-|----------------------------------------------------------------------------
-| EVENT TIMING
-|----------------------------------------------------------------------------
-*/
-$('#event-1').countdown({
-	date: "October 27, 2015 15:03:26",
-	render: function (date) {
-   	this.el.innerHTML = "<ul>"
-   							+ "<li><div><h6>" + date.days + "</h6>days</div></li>"
-                        + "<li><div><h6>" + this.leadingZeros(date.hours) + "</h6>hours</div></li>"
-                        + "<li><div><h6>" + this.leadingZeros(date.min) + "</h6>minutes</div></li> "
-                        + "<li><div><h6>" + this.leadingZeros(date.sec) + "</h6>seconds</div></li>"
-                        + "</ul>";
-  }
-});
-
-$('#event-2').countdown({
-	date: "November 1, 2015 4:01:6",
-	render: function (date) {
-   	this.el.innerHTML = "<ul>"
-   							+ "<li><div><h6>" + date.days + "</h6>days</div></li>"
-                        + "<li><div><h6>" + this.leadingZeros(date.hours) + "</h6>hours</div></li>"
-                        + "<li><div><h6>" + this.leadingZeros(date.min) + "</h6>minutes</div></li> "
-                        + "<li><div><h6>" + this.leadingZeros(date.sec) + "</h6>seconds</div></li>"
-                        + "</ul>";
-  }
-});
-
-$('#event-3').countdown({
-	date: "November 3, 2015 11:13:2",
-	render: function (date) {
-   	this.el.innerHTML = "<ul>"
-   							+ "<li><div><h6>" + date.days + "</h6>days</div></li>"
-                        + "<li><div><h6>" + this.leadingZeros(date.hours) + "</h6>hours</div></li>"
-                        + "<li><div><h6>" + this.leadingZeros(date.min) + "</h6>minutes</div></li> "
-                        + "<li><div><h6>" + this.leadingZeros(date.sec) + "</h6>seconds</div></li>"
-                        + "</ul>";
-  }
-});
-
 
 /*
 |----------------------------------------------------------------------------
@@ -134,89 +94,6 @@ $('#testimonials .owl-carousel').owlCarousel({
 });
 
 
-
-/*
-|----------------------------------------------------------------------------
-| SUCCESS STORIES - COUNTER
-|----------------------------------------------------------------------------
-*/
-$('.stat-count').counterUp({
-  delay: 30,
-  time: 2000
-});
-
-
-/*
-|----------------------------------------------------------------------------
-| REPLACE WITH YOUR COMMENT
-|----------------------------------------------------------------------------
-*/
-$('#pets-container').mixItUp();
-
-
-
-/*
-|----------------------------------------------------------------------------
-| CONTACT FORM ANIMATION
-|----------------------------------------------------------------------------
-*/
-var inputBox = $('.form-control');
-
-inputBox.on('focus', function() {
-   $(this).closest('.input-group').addClass('active');
-});
-
-inputBox.on('blur', function() {
-   if( $(this).val() === "" ) {
-      $(this).closest('.input-group').removeClass('active');
-   }
-});
-
-
-/*
-|----------------------------------------------------------------------------
-| FLICKR FEED
-|----------------------------------------------------------------------------
-*/
-$('.flickr-feed').jflickrfeed({
-   limit: 4,
-   qstrings: {
-      // id: '44802888@N04'
-      tags: 'pet, pets'
-   },
-   itemTemplate: '<li><a href="{{image_b}}" class="anima-lightbox" target="_blank"><img src="{{image_m}}" alt="{{title}}"></a></li>'
-});
-
-
-
-/*
-|----------------------------------------------------------------------------
-| AJAX SUBSCRIBE
-|----------------------------------------------------------------------------
-*/
-$("#subscribe").ajaxChimp({
-    callback: mailchimpCallback,
-    url: "http://codepassenger.us10.list-manage.com/subscribe/post?u=6b2e008d85f125cf2eb2b40e9&id=6083876991" // Replace your mailchimp post url inside double quote "".  
-});
-
-function mailchimpCallback(resp) {
-     if(resp.result === 'success') {
-        $('.subscribe .success-msg')
-            .html(resp.msg)
-            .delay(500)
-            .fadeIn(1000);
-
-        $('.subscribe .error-msg').fadeOut(500);
-        
-    } else if(resp.result === 'error') {
-        $('.subscribe .error-msg')
-            .html(resp.msg)
-            .delay(500)
-            .fadeIn(1000);
-            
-        $('.subscribe .success-msg').fadeOut(500);
-    }  
-};
 
 
 // Function for email address validation
@@ -262,21 +139,6 @@ $("#contact-form").on('submit', function(e) {
 });
 
 
-/*
-|----------------------------------------------------------------------------
-| TAB TOGGLE
-|----------------------------------------------------------------------------
-*/
-$('#address-map-tab a').on('click', function (e) {
-  e.preventDefault();
-  $(this).tab('show');
-});
-
-$('#anima-tab a').on('click' ,function (e) {
-  e.preventDefault();
-  $(this).tab('show');
-});
-
 
 
 /*
@@ -286,24 +148,6 @@ $('#anima-tab a').on('click' ,function (e) {
 */
 $('.anima-lightbox').nivoLightbox();
 
-
-/*
-|----------------------------------------------------------------------------
-| VIDEO PLAYER
-|----------------------------------------------------------------------------
-*/
-$('.video-player').fitVids();
-
-
-/*
-|----------------------------------------------------------------------------
-| PARALLAX BAKGROUND
-|----------------------------------------------------------------------------
-*/
-$(window).stellar({
-  horizontalScrolling: false,
-  scrollProperty: 'transform'
-});
 
 
 /*

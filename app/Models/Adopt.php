@@ -3,6 +3,7 @@
 use DateTime;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 
 class Adopt extends Model
 {
@@ -18,8 +19,32 @@ class Adopt extends Model
 
   ];
 
-  public function saveAdopt() {
+  public function saveAdopt($input) {
+    $this->name = $input['name'];
+    $this->breed = $input['breed'];
+    $this->gender = $input['gender'];
+    $this->adopt_stat = $input['adopt_stat'];
+    $this->temperament = $input['temperament'];
+    $this->desc_long = $input['desc_long'];
+    $this->desc_short = $input['desc_short'];
+    $this->birthday = $input['birthday'];
+    $this->hdb = isset($input['hdb']) ? $input['hdb']  : 'N';
 
+    $file = Input::file('image');
+
+    if ($file) {
+      var_dump($file);
+      $config_service = new Config();
+      $dir = $config_service->getImageDir() . 'adopt/';
+
+      $file_name = $input['name'].'.'.$file->getClientOriginalExtension();
+      var_dump($dir);
+      var_dump($file_name);
+      $file->move($dir, $file_name);
+      $this->image = $file_name;
+    }
+    $this->save();
+    return true;
   }
 
   public function getAdoptAvailable() {

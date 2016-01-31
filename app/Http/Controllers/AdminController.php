@@ -15,16 +15,10 @@ class AdminController extends Controller
     if (Request::isMethod('post')) {
       $input = Input::all();
       $config_service->updateConfigAll($input);
-      //return redirect()->back()->with('message', 'Updated');
+      return redirect()->back()->with('message', 'Updated');
     }
     $data['configs'] = $config_service->getConfigAll();
     return view("admin.admin", $data);
-  }
-
-  public function adopt() {
-    $adopt_service = new Adopt();
-    $data['adopts'] = $adopt_service->getAdoptAll();
-    return view("admin.adopt-admin");
   }
 
   public function requestAdoptadog() {

@@ -12,6 +12,12 @@ class ConfigSeeder extends Seeder
         'config_value'=>'banner1.jpg',
         'config_desc'=>'1920px width x 1214px height'
       ];
+      $configs[] = [
+        'config_type'=>'image',
+        'config_key'=>'banner2',
+        'config_value'=>'banner2.jpg',
+        'config_desc'=>'1920px width x 1214px height'
+      ];
 
       $configs[] = [
         'config_type'=>'image',

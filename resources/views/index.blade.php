@@ -137,7 +137,7 @@
           <img src="{!!URL::to('assets')!!}/images/adopt/{{$adopt->image}}" alt="Cat" class="img-responsive">
 
           <article>
-            <h4 class="title-text text-capitalize">{{$adopt->adopt_name}}</h4>
+            <h4 class="title-text text-capitalize">{{$adopt->name}}</h4>
             <hr class="yellow-line">
             <p>
               <i class="fa fa-birthday-cake"></i> {{$adopt->age}}<br>

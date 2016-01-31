@@ -58,7 +58,7 @@ class Config extends Model
     return true;
   }
 
-  private function getImageDir() {
+  public function getImageDir() {
     if (App::environment('local')) {
       return $_SERVER['DOCUMENT_ROOT'] . "em/assets/images/";
     } else if (App::environment('production')) {

@@ -12,7 +12,7 @@
       </div>
     @endif
 
-    <a href="{{URL::to('admin/adopt')}}">Adopt</a>
+    <a href="{{URL::to('admin/adopt')}}">Adoption List</a>
     <br><br>
 
     <form method="post" action="" enctype="multipart/form-data">
