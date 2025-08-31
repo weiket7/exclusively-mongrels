@@ -1,0 +1,22 @@
+.navbar-contact li {
+  font-size: 14px;
+}
+
+.navbar-contact {
+  margin-top: 15px;
+}
+
+
+@media screen and (max-width: 480px) {
+  .navbar-brand {
+    font-size: 25px;
+  }
+
+  p {
+    line-height: 1.2;
+  }
+
+  .section-header {
+    margin-bottom: 20px;
+  }
+}
